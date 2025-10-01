@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background: url('BgMenu.png') no-repeat center center fixed;
+  background: url('Images/BgMenu.png') no-repeat center center fixed;
   background-size: cover;
   color: #e6eef6;
   display: flex;
@@ -238,3 +238,4 @@ footer { margin-top: 18px; font-size: 0.75rem; color: rgba(230,238,246,0.7); }
   .profile { max-width: 100%; }
   .download-btn { width: 100%; justify-content: center; }
 }
+
