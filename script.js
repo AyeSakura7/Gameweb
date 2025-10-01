@@ -68,4 +68,3 @@ function createLeaf() {
 }
 
 setInterval(createLeaf, 800);
-
