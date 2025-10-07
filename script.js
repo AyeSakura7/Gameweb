@@ -1,29 +1,42 @@
+// 🔹 Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// 🔹 Toggle menu
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("show");
 }
 
-function openModal() {
-  document.getElementById("aboutModal").style.display = "flex";
+// 🔹 Open modal by ID
+function openModal(id) {
+  document.getElementById("aboutUsModal").style.display = "none";
+  document.getElementById("aboutGameModal").style.display = "none";
+  document.getElementById("homeSection").style.display = "none";
+
+  document.getElementById(id).style.display = "flex";
   document.getElementById("menu").classList.remove("show");
 }
 
-function closeModal() {
-  document.getElementById("aboutModal").style.display = "none";
+// 🔹 Go Home
+function goHome() {
+  document.getElementById("aboutUsModal").style.display = "none"; 
+  document.getElementById("aboutGameModal").style.display = "none"; 
+  document.getElementById("homeSection").style.display = "block"; 
+  document.getElementById("menu").classList.remove("show");
 }
 
-// 🔹 Smooth parallax feel (disabled inside About modal)
+// 🔹 Background Parallax
 document.addEventListener("mousemove", (e) => {
-  const modal = document.getElementById("aboutModal");
-  if (modal.style.display === "flex") return;
+  const usModal = document.getElementById("aboutUsModal");
+  const gameModal = document.getElementById("aboutGameModal");
+
+  if (usModal.style.display === "flex" || gameModal.style.display === "flex") return;
 
   let moveX = (e.clientX / window.innerWidth - 0.5) * 5;
   let moveY = (e.clientY / window.innerHeight - 0.5) * 5;
   document.body.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
-// 🔹 Auto detect file size
+// 🔹 File size auto-detect
 (async function(){
   const link = document.getElementById('downloadLink').href;
   try {
@@ -38,32 +51,25 @@ document.addEventListener("mousemove", (e) => {
   }
 })();
 
-// 🔹 Falling Leaves Generator
+// 🔹 Falling Leaves
 function createLeaf() {
   const leaf = document.createElement("div");
   leaf.classList.add("leaf");
 
-  // Random X position
   leaf.style.left = Math.random() * 100 + "vw";
-
-  // Random size
   const size = Math.random() * 20 + 20;
   leaf.style.width = size + "px";
   leaf.style.height = size + "px";
 
-  // Random duration & delay
   const duration = Math.random() * 5 + 5;
   leaf.style.animationDuration = duration + "s";
   leaf.style.animationDelay = Math.random() * 5 + "s";
 
-  // Random leaf type
   const leafTypes = ["Images/GreenLeaf.png", "Images/BrownLeaf.png"];
   const chosen = leafTypes[Math.floor(Math.random() * leafTypes.length)];
   leaf.style.backgroundImage = `url('${chosen}')`;
 
   document.body.appendChild(leaf);
-
-  // Remove after animation
   setTimeout(() => leaf.remove(), (duration + 5) * 1000);
 }
 
