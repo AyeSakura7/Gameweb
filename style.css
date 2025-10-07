@@ -203,11 +203,13 @@ footer { margin-top: 18px; font-size: 0.75rem; color: rgba(230,238,246,0.7); }
 }
 
 .profile img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+  width: 200px;
+  height: 250px; /* same height for all */
+  object-fit: cover; /* crops to fit without distortion */
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  display: block;
+  margin: 0 auto;
 }
 
 .profile p { margin: 8px 0 4px; font-weight: 600; font-size: 1rem; }
@@ -238,3 +240,4 @@ footer { margin-top: 18px; font-size: 0.75rem; color: rgba(230,238,246,0.7); }
   .profile { max-width: 100%; }
   .download-btn { width: 100%; justify-content: center; }
 }
+
