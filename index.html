@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EcoQuest Download</title>
-
-  <!-- Link external CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,85 +12,101 @@
     <img src="Images/TEAM LOGO.png" alt="Team Logo">
   </div>
 
-  <!-- 🔹 Menu -->
-  <div class="menu-container">
-    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
-    <div class="menu-items" id="menu">
-      <a onclick="goHome()">Home</a>
-      <a onclick="openModal('aboutUsModal')">About Us</a>
-      <a onclick="openModal('aboutGameModal')">About Game</a>
-    </div>
+  <!-- 🔹 Fixed Vertical Menu -->
+  <nav class="side-menu hidden" id="sideMenu">
+    <a class="active" onclick="goHome()">Home</a>
+    <a onclick="openModal('aboutUsModal')">About Us</a>
+    <a onclick="openModal('aboutGameModal')">About Game</a>
+    <a onclick="openModal('creditModal')">Credit</a>
+  </nav>
+
+  <!-- 🔹 Team Logo (Visible only on Home) -->
+  <div class="team-footer hidden" id="teamFooter">
+    <img src="Images/TEAM LOGO.png" alt="Team Logo">
   </div>
 
-  <!-- 🔹 Main Card -->
-  <main class="card" id="homeSection">
-    <h1>EcoQuest</h1>
-    <p>Click the button below to download the Windows installer.</p>
-    
-    <a id="downloadLink" class="download-btn" href="https://www.dropbox.com/scl/fi/4oz4c57uluogk2eyt0pey/Darkest-Rebellion.exe?rlkey=zds0m2f8xb291cx65xnflz4a4&st=ay2piwjp&dl=1" download>
-      <img src="Images/Windows.png" alt="Windows" class="win-icon">
-      Download Game (Windows .exe)
-    </a>
-    
-    <footer>© <span id="year"></span> TYPE: J</footer>
-  </main>
+  <!-- 🔹 Background Wrapper -->
+  <div id="bgWrap">
+    <!-- 🔹 Main Card -->
+    <main class="card" id="homeSection">
+      <h1>Darkest Rebellion</h1>
+      <p>Click the button below to download the Windows installer.</p>
 
-  <!-- 🔹 About Us Modal -->
-  <div class="modal" id="aboutUsModal">
-    <div class="modal-content">
-      <img src="Images/TEAM LOGO.png" alt="Team Logo" class="team-logo">
-      <h2>About Us</h2>
-      <div class="profiles">
-        <div class="profile">
-          <img src="Images/Bheejay.jpg" alt="Bhee Jay Antonio">
-          <p>Bhee Jay Antonio</p>
-          <div class="role">Technical</div>
-          <div class="social-header">Social Media</div>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/share/1Cpp3KJCWf/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
-            <a href="https://www.tiktok.com/@ayesakura7?is_from_webapp=1&sender_device=pc"><img src="Images/tiktok.png" alt="TikTok"></a>
-            <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+      <a id="downloadLink" class="download-btn"
+         href="https://www.dropbox.com/scl/fi/4oz4c57uluogk2eyt0pey/Darkest-Rebellion.exe?rlkey=zds0m2f8xb291cx65xnflz4a4&st=ay2piwjp&dl=1"
+         download>
+        <img src="Images/Windows.png" alt="Windows" class="win-icon">
+        Download Game (Windows .exe)
+      </a>
+
+      <footer>© <span id="year"></span> TYPE: J</footer>
+    </main>
+
+    <!-- 🔹 About Us Modal -->
+    <div class="modal" id="aboutUsModal">
+      <div class="modal-content">
+        <img src="Images/TEAM LOGO.png" alt="Team Logo" class="team-logo">
+        <h2>About Us</h2>
+        <div class="profiles">
+          <div class="profile">
+            <img src="Images/Bheejay.jpg" alt="Bhee Jay Antonio">
+            <p class="name">Bhee Jay Antonio</p>
+            <div class="role">Technical</div>
+            <div class="social-header">Social Media</div>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/share/1Cpp3KJCWf/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+              <a href="https://www.tiktok.com/@ayesakura7" target="_blank"><img src="Images/tiktok.png" alt="TikTok"></a>
+              <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+            </div>
           </div>
-        </div>
-        <div class="profile">
-          <img src="Images/Kyle.jpg" alt="Kyle Lewis Halog">
-          <p>Kyle Lewis Halog</p>
-          <div class="role">Programmer</div>
-          <div class="social-header">Social Media</div>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/kylelewis.halog.7/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="Images/tiktok.png" alt="TikTok"></a>
-            <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+
+          <div class="profile">
+            <img src="Images/Kyle.jpg" alt="Kyle Lewis Halog">
+            <p class="name">Kyle Lewis Halog</p>
+            <div class="role">Programmer</div>
+            <div class="social-header">Social Media</div>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/kylelewis.halog.7/" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+              <a href="#"><img src="Images/tiktok.png" alt="TikTok"></a>
+              <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+            </div>
           </div>
-        </div>
-        <div class="profile">
-          <img src="Images/roberto.jpg" alt="Gil Brian Jaramillo">
-          <p>Gil Brian Jaramillo</p>
-          <div class="role">Artist / Designer</div>
-          <div class="social-header">Social Media</div>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/pewdiepie.hehe" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="Images/tiktok.png" alt="TikTok"></a>
-            <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+
+          <div class="profile">
+            <img src="Images/Roberto.jpg" alt="Gil Brian Jaramillo">
+            <p class="name">Gil Brian Jaramillo</p>
+            <div class="role">Artist / Designer</div>
+            <div class="social-header">Social Media</div>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/pewdiepie.hehe" target="_blank"><img src="Images/facebook.png" alt="Facebook"></a>
+              <a href="#"><img src="Images/tiktok.png" alt="TikTok"></a>
+              <a href="#"><img src="Images/instagram.png" alt="Instagram"></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 🔹 About Game Modal -->
-  <div class="modal" id="aboutGameModal">
-    <div class="modal-content">
-      <h2>About the Game</h2>
-      <p>
-        EcoQuest is a game designed to promote environmental awareness and problem-solving skills. 
-        Players embark on challenges that simulate real-world ecological issues while having fun.
-      </p>
+    <!-- 🔹 About Game Modal -->
+    <div class="modal" id="aboutGameModal">
+      <div class="modal-content">
+        <h2>About the Game</h2>
+        <p>
+          EcoQuest is a game designed to promote environmental awareness and problem-solving skills. 
+          Players embark on challenges that simulate real-world ecological issues while having fun.
+        </p>
+      </div>
+    </div>
+
+    <!-- 🔹 Credit Modal -->
+    <div class="modal" id="creditModal">
+      <div class="modal-content">
+        <h2>Credits</h2>
+        <p>Developed by TYPE: J Team — Darkest Rebellion Project</p>
+      </div>
     </div>
   </div>
 
-  <!-- Link external JS -->
   <script src="script.js"></script>
 </body>
 </html>
-
