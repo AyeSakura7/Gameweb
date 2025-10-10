@@ -7,12 +7,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 🔹 Preloader -->
   <div id="preloader">
     <img src="Images/TEAM LOGO.png" alt="Team Logo">
   </div>
 
-  <!-- 🔹 Fixed Vertical Menu -->
   <nav class="side-menu hidden" id="sideMenu">
     <a class="active" onclick="goHome()">Home</a>
     <a onclick="openModal('aboutUsModal')">About Us</a>
@@ -20,29 +18,23 @@
     <a onclick="openModal('creditModal')">Credit</a>
   </nav>
 
-  <!-- 🔹 Team Logo (Visible only on Home) -->
   <div class="team-footer hidden" id="teamFooter">
     <img src="Images/TEAM LOGO.png" alt="Team Logo">
   </div>
 
-  <!-- 🔹 Background Wrapper -->
   <div id="bgWrap">
-    <!-- 🔹 Main Card -->
     <main class="card" id="homeSection">
       <h1>EcoQuest</h1>
       <p>Click the button below to download the Windows installer.</p>
-
       <a id="downloadLink" class="download-btn"
-         href="https://www.dropbox.com/scl/fi/4oz4c57uluogk2eyt0pey/Darkest-Rebellion.exe?rlkey=zds0m2f8xb291cx65xnflz4a4&st=ay2piwjp&dl=1"
-         download>
+         href="https://www.dropbox.com/scl/fi/2j91kp3gqypoo9s3oyjwc/RogerAura.mp4?rlkey=c14mant3q34lnfbv68q7qo4sx&st=wi03shdh&dl=1"download>
         <img src="Images/Windows.png" alt="Windows" class="win-icon">
         Download Game (Windows .exe)
       </a>
 
-      <footer>© <span id="year"></span> TYPE: J Entertainment</footer>
+      <footer>© <span id="year"></span> TYPE: J</footer>
     </main>
 
-    <!-- 🔹 About Us Modal -->
     <div class="modal" id="aboutUsModal">
       <div class="modal-content">
         <img src="Images/TEAM LOGO.png" alt="Team Logo" class="team-logo">
@@ -73,7 +65,7 @@
           </div>
 
           <div class="profile">
-            <img src="Images/roberto.jpg" alt="Gil Brian Jaramillo">
+            <img src="Images/Roberto.jpg" alt="Gil Brian Jaramillo">
             <p class="name">Gil Brian Jaramillo</p>
             <div class="role">Artist / Designer</div>
             <div class="social-header">Social Media</div>
@@ -87,7 +79,6 @@
       </div>
     </div>
 
-    <!-- 🔹 About Game Modal -->
     <div class="modal" id="aboutGameModal">
       <div class="modal-content">
         <h2>About the Game</h2>
@@ -95,10 +86,14 @@
           EcoQuest is a game designed to promote environmental awareness and problem-solving skills. 
           Players embark on challenges that simulate real-world ecological issues while having fun.
         </p>
+         <h2>Characters</h2>
+        <p>
+          EcoQuest is a game designed to promote environmental awareness and problem-solving skills. 
+          Players embark on challenges that simulate real-world ecological issues while having fun.
+        </p>
       </div>
     </div>
 
-    <!-- 🔹 Credit Modal -->
     <div class="modal" id="creditModal">
       <div class="modal-content">
         <h2>Credits</h2>
@@ -110,5 +105,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
