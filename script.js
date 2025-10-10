@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('sideMenu').classList.remove('hidden');
     document.getElementById('teamFooter').classList.remove('hidden');
-    initMusic(); // Initialize music after preload
+    initMusic(); 
   }, 3100);
 });
 
@@ -113,21 +113,19 @@ function createLeaf() {
 }
 setInterval(createLeaf, 800);
 
-// 🎵 Background music setup (fixed path + autoplay safe)
+
 function initMusic() {
   const footer = document.getElementById('teamFooter');
   const audio = new Audio('Mp3/LobbyBgMusic.mp3'); // ✅ must match exact folder name
   audio.loop = true;
   audio.volume = 0.6;
 
-  // 🔸 Allow playback after any user interaction (browser autoplay rule)
   const tryPlay = () => {
     audio.play().catch(() => {});
     document.removeEventListener('click', tryPlay);
   };
   document.addEventListener('click', tryPlay);
 
-  // 🔈 Create mute/unmute button beside the logo
   const btn = document.createElement('button');
   btn.className = 'mute-btn';
   const icon = document.createElement('img');
@@ -142,3 +140,4 @@ function initMusic() {
     icon.src = muted ? 'Images/pause.png' : 'Images/play.png';
   });
 }
+
