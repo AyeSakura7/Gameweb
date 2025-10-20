@@ -1,15 +1,48 @@
+// Set current year in footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
 const TRANS_MS = 500;
 const ORDER = ['homeSection', 'aboutUsModal', 'aboutGameModal', 'creditModal'];
-document.getElementById('year').textContent = new Date().getFullYear();
 
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('sideMenu').classList.remove('hidden');
     document.getElementById('teamFooter').classList.remove('hidden');
-    initMusic(); 
+    initMusic(); // Initialize background music after preloader
   }, 3100);
 });
 
+// 🎵 Background music setup with autoplay workaround
+function initMusic() {
+  const footer = document.getElementById('teamFooter');
+  const audio = new Audio('Mp3/LobbyBgMusic.mp3');
+  audio.loop = true;
+  audio.volume = 0.6;
+
+  // Allow playback after any user interaction (autoplay policy)
+  const tryPlay = () => {
+    audio.play().catch(() => {});
+    document.removeEventListener('click', tryPlay);
+  };
+  document.addEventListener('click', tryPlay);
+
+  // Make mute/unmute button beside the logo
+  const btn = document.createElement('button');
+  btn.className = 'mute-btn';
+  const icon = document.createElement('img');
+  icon.src = 'Images/play.png'; // Speaker icon (add it to Images folder)
+  btn.appendChild(icon);
+  footer.appendChild(btn);
+
+  let muted = false;
+  btn.addEventListener('click', () => {
+    muted = !muted;
+    audio.muted = muted;
+    icon.src = muted ? 'Images/pause.png' : 'Images/play.png'; // Toggle icon
+  });
+}
+
+// UI Transition Helpers
 function getCurrentVisible() {
   const home = document.getElementById('homeSection');
   const modals = document.querySelectorAll('.modal');
@@ -71,6 +104,7 @@ function directionalTransition(outEl, inEl) {
   }
 }
 
+// Navigation
 function openModal(id) {
   const newModal = document.getElementById(id);
   const currentVisible = getCurrentVisible();
@@ -87,7 +121,7 @@ function goHome() {
   document.querySelector('.side-menu a:first-child').classList.add('active');
 }
 
-// Parallax mouse effect
+// Parallax effect
 document.addEventListener('mousemove', (e) => {
   const wrap = document.getElementById('bgWrap');
   const moveX = (e.clientX / window.innerWidth - 0.5) * 5;
@@ -95,7 +129,7 @@ document.addEventListener('mousemove', (e) => {
   wrap.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
-// Falling leaves
+// Falling leaves animation
 function createLeaf() {
   const leaf = document.createElement('div');
   leaf.classList.add('leaf');
@@ -112,32 +146,3 @@ function createLeaf() {
   setTimeout(() => leaf.remove(), (duration + 5) * 1000);
 }
 setInterval(createLeaf, 800);
-
-
-function initMusic() {
-  const footer = document.getElementById('teamFooter');
-  const audio = new Audio('Mp3/LobbyBgMusic.mp3'); // ✅ must match exact folder name
-  audio.loop = true;
-  audio.volume = 0.6;
-
-  const tryPlay = () => {
-    audio.play().catch(() => {});
-    document.removeEventListener('click', tryPlay);
-  };
-  document.addEventListener('click', tryPlay);
-
-  const btn = document.createElement('button');
-  btn.className = 'mute-btn';
-  const icon = document.createElement('img');
-  icon.src = 'Images/play.png'; // your speaker icon (add it in Images)
-  btn.appendChild(icon);
-  footer.appendChild(btn);
-
-  let muted = false;
-  btn.addEventListener('click', () => {
-    muted = !muted;
-    audio.muted = muted;
-    icon.src = muted ? 'Images/pause.png' : 'Images/play.png';
-  });
-}
-
