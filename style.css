@@ -273,3 +273,24 @@ body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .profiles::-webkit-s
     opacity: 0.7;
   }
 }
+
+.mute-btn {
+  background: rgba(0,0,0,0.6);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+.mute-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+.mute-btn img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
