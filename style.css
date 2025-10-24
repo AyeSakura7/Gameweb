@@ -174,7 +174,7 @@ footer { margin-top: 18px; font-size: 0.75rem; color: rgba(230,238,246,0.7); }
 }
 .modal-content {
   color: #fff;
-  text-align: center;
+  text-align: left;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -294,3 +294,4 @@ body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .profiles::-webkit-s
   height: 24px;
   filter: invert(1);
 }
+
