@@ -174,7 +174,19 @@ footer { margin-top: 18px; font-size: 0.75rem; color: rgba(230,238,246,0.7); }
 }
 .modal-content {
   color: #fff;
-  text-align: left;
+  text-align: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-y: auto;
+  max-height: 90vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-content2 {
+  color: #fff;
+  text-align: justify;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -255,7 +267,6 @@ body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .profiles::-webkit-s
   display: none !important;
 }
 
-/* -------- Falling leaves ------------- */
 .leaf {
   position: fixed;
   top: -40px;
@@ -265,7 +276,6 @@ body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .profiles::-webkit-s
   z-index: 2;
   opacity: 0.85;
   animation: fall linear forwards;
-  /* individual animation props set by inline style in JS */
 }
 @keyframes fall {
   to {
@@ -294,4 +304,3 @@ body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .profiles::-webkit-s
   height: 24px;
   filter: invert(1);
 }
-
