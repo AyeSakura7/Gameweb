@@ -183,18 +183,6 @@ footer { margin-top: 18px; font-size: 0.75rem; color: rgba(230,238,246,0.7); }
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
-.modal-content2 {
-  color: #fff;
-  text-align: justify;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  overflow-y: auto;
-  max-height: 90vh;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
 .modal-content::-webkit-scrollbar {display: none;}
 .team-logo {
   width: min(40vw,200px);
@@ -304,3 +292,4 @@ body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .profiles::-webkit-s
   height: 24px;
   filter: invert(1);
 }
+
